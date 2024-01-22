@@ -1,0 +1,36 @@
+extends CharacterBody3D
+
+# min and max speed of the monster in m/s
+@export var min_speed = 10
+@export var max_speed = 18
+
+
+func _physics_process(delta):
+	move_and_slide()
+
+
+# This function will be called from the Main scene
+func initialize(start_position, player_position):
+	
+	# Position the mob by placing it at start_position
+	# and rotate it towards player_position, so it looks at the player
+	look_at_from_position(start_position, player_position, Vector3.UP)
+	
+	# Rotate this mob randomly within range of -45 and +45 degrees,
+	# so that it doesn't move directly towards the player
+	rotate_y(randf_range(-PI / 4, PI / 4))
+	
+	# Calculate a random speed (integer)
+	var random_speed = randi_range(min_speed, max_speed)
+	
+	# Calculate a forward velocity that represents the speed
+	velocity = Vector3.FORWARD * random_speed
+	
+	# Then rotate the velocity vector based on the mob's Y rotation
+	# in order to move in the direction the mob is looking
+	velocity = velocity.rotated(Vector3.UP, rotation.y)
+
+
+# Using the "VisibleOnScreenNotifier" node signal "screen_exited", delete the monster
+func _on_visible_on_screen_notifier_3d_screen_exited():
+	queue_free()

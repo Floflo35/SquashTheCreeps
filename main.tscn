@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bf5g0ybornm7h"]
+[gd_scene load_steps=6 format=3 uid="uid://bf5g0ybornm7h"]
 
 [ext_resource type="PackedScene" uid="uid://du0u1v14eg36c" path="res://player.tscn" id="1_riwt3"]
 
@@ -7,6 +7,12 @@ size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_p378t"]
 size = Vector3(60, 2, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3q5c"]
+albedo_color = Color(1, 0.482, 0.16, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0wauv"]
+material = SubResource("StandardMaterial3D_k3q5c")
 
 [node name="Main" type="Node"]
 
@@ -34,3 +40,21 @@ near = 4.34
 far = 100.0
 
 [node name="Player" parent="." instance=ExtResource("1_riwt3")]
+
+[node name="Cylinders" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, -14)
+mesh = SubResource("CylinderMesh_0wauv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -14)
+mesh = SubResource("CylinderMesh_0wauv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, 14)
+mesh = SubResource("CylinderMesh_0wauv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Cylinders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, 14)
+mesh = SubResource("CylinderMesh_0wauv")

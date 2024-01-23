@@ -24,6 +24,10 @@ window/size/viewport_height=540
 
 project/assembly_name="Squash the Creeps (3D)"
 
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
+
 [input]
 
 ui_accept={
@@ -137,7 +141,14 @@ jump={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="player"
+3d_physics/layer_2="enemies"
+3d_physics/layer_3="world"
+
 [rendering]
 
+renderer/rendering_method="mobile"
 quality/driver/driver_name="GLES2"
 quality/filters/msaa=3

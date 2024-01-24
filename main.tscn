@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf5g0ybornm7h"]
+[gd_scene load_steps=14 format=3 uid="uid://bf5g0ybornm7h"]
 
 [ext_resource type="PackedScene" uid="uid://du0u1v14eg36c" path="res://player.tscn" id="1_riwt3"]
 [ext_resource type="Script" path="res://main.gd" id="1_rnijq"]
 [ext_resource type="PackedScene" uid="uid://h344xggg6tk6" path="res://mob.tscn" id="2_3nle5"]
 [ext_resource type="Script" path="res://CameraPivot.gd" id="3_jj73j"]
+[ext_resource type="FontFile" uid="uid://ponkkacvox8r" path="res://fonts/Montserrat-Medium.ttf" id="5_c0fcy"]
+[ext_resource type="Script" path="res://ScoreLabel.gd" id="6_wu003"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qpeei"]
 size = Vector3(60, 2, 60)
@@ -23,6 +25,11 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="Theme" id="Theme_3m438"]
+default_font = ExtResource("5_c0fcy")
+
+[sub_resource type="Theme" id="Theme_o4mrj"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_rnijq")
@@ -87,6 +94,55 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13, 2
 wait_time = 0.5
 autostart = true
 
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = SubResource("Theme_3m438")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Score: 0"
+script = ExtResource("6_wu003")
+
+[node name="Retry" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="UI/Retry"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -11.5
+offset_right = 0.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_o4mrj")
+theme_override_fonts/font = ExtResource("5_c0fcy")
+theme_override_font_sizes/font_size = 40
+text = "Press Enter to retry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="squash" from="Player" to="CameraPivot" method="_on_player_squash"]
 [connection signal="squash" from="Player" to="CameraPivot/Camera3D" method="_on_player_squash"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]

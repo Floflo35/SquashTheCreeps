@@ -9,6 +9,8 @@ var squash_length = squash_length_init
 var squashing = false
 var init_scale
 var has_collision = true
+@export var min_size = 0.5
+@export var max_size = 2
 
 
 func _physics_process(delta):
@@ -41,12 +43,19 @@ func initialize(start_position, player_position):
 	# Calculate a random speed (integer)
 	var random_speed = randi_range(min_speed, max_speed)
 	
+	var size = randf_range(min_size, max_size)
+	scale.x = scale.x * size
+	scale.y = scale.y * size
+	scale.z = scale.z * size
+	
 	# Calculate a forward velocity that represents the speed
 	velocity = Vector3.FORWARD * random_speed
 	
 	# Then rotate the velocity vector based on the mob's Y rotation
 	# in order to move in the direction the mob is looking
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
+	
+	$AnimationPlayer.speed_scale = random_speed / min_speed
 
 
 # Using the "VisibleOnScreenNotifier" node signal "screen_exited", delete the monster

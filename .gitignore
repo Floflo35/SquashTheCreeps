@@ -13,3 +13,5 @@ data_*/
 # custom
 *.cache
 .godot/
+.godot/uid_cache.bin
+.godot/editor/filesystem_cache8

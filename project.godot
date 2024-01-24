@@ -23,8 +23,7 @@ MusicPlayer="*res://MusicPlayer.tscn"
 
 window/size/viewport_width=720
 window/size/viewport_height=540
-window/size/mode=2
-window/size/initial_position_type=2
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
@@ -156,5 +155,6 @@ jump={
 [rendering]
 
 renderer/rendering_method="mobile"
+anti_aliasing/quality/use_taa=true
 quality/driver/driver_name="GLES2"
 quality/filters/msaa=3

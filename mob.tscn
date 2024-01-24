@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://h344xggg6tk6"]
+[gd_scene load_steps=9 format=3 uid="uid://h344xggg6tk6"]
 
 [ext_resource type="Script" path="res://Mob.gd" id="1_wihn1"]
 [ext_resource type="PackedScene" uid="uid://bwutcpo6cjoqt" path="res://art/mob.glb" id="2_48ski"]
+[ext_resource type="AudioStream" uid="uid://bs8dqdpdants" path="res://art/Tom Hi 909 Color 03.wav" id="3_3s3f1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1q842"]
 size = Vector3(1.87402, 0.805923, 1.96429)
@@ -119,5 +120,8 @@ libraries = {
 "": SubResource("AnimationLibrary_lcmv1")
 }
 autoplay = "float_2"
+
+[node name="SquashingSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_3s3f1")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

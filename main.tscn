@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bf5g0ybornm7h"]
+[gd_scene load_steps=15 format=3 uid="uid://bf5g0ybornm7h"]
 
 [ext_resource type="PackedScene" uid="uid://du0u1v14eg36c" path="res://player.tscn" id="1_riwt3"]
 [ext_resource type="Script" path="res://main.gd" id="1_rnijq"]
 [ext_resource type="PackedScene" uid="uid://h344xggg6tk6" path="res://mob.tscn" id="2_3nle5"]
 [ext_resource type="Script" path="res://CameraPivot.gd" id="3_jj73j"]
+[ext_resource type="AudioStream" uid="uid://cf71gpm1b4iwi" path="res://art/DepthCharge-Clean.ogg" id="5_6wasm"]
 [ext_resource type="FontFile" uid="uid://ponkkacvox8r" path="res://fonts/Montserrat-Medium.ttf" id="5_c0fcy"]
 [ext_resource type="Script" path="res://ScoreLabel.gd" id="6_wu003"]
 
@@ -102,6 +103,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("5_6wasm")
 
 [node name="ScoreLabel" type="Label" parent="UI"]
 layout_mode = 0

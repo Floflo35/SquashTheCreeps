@@ -31,6 +31,7 @@ func _on_player_hit():
 	$MobTimer.stop()
 	$UI/Retry/Label.set_text("Score: %s \n Press Enter to Retry" % $UI/ScoreLabel.score)
 	$UI/Retry.show()
+	$UI/GameOverSound.playing = true
 	
 
 func _unhandled_input(event):

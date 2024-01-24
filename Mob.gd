@@ -47,6 +47,7 @@ func initialize(start_position, player_position):
 	scale.x = scale.x * size
 	scale.y = scale.y * size
 	scale.z = scale.z * size
+	$SquashingSound.pitch_scale = 1 / size
 	
 	# Calculate a forward velocity that represents the speed
 	velocity = Vector3.FORWARD * random_speed
@@ -67,5 +68,5 @@ func _on_visible_on_screen_notifier_3d_screen_exited():
 func squash():
 	squashed.emit()
 	squashing = true
-			
+	$SquashingSound.playing = true
 			

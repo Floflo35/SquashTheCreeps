@@ -1,16 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706103441
+::res://::1706103853
 CameraPivot.gd::GDScript::-1::1706086937::0::1::::<>Marker3D<>::
 default_bus_layout.tres::AudioBusLayout::-1::1705919313::0::1::::<><>::
 default_env.tres::Environment::-1::1705919313::0::1::::<><>::
 icon.png::CompressedTexture2D::4475444606634587995::1606009720::1705919382::1::::<><>::
 main.gd::GDScript::-1::1706100993::0::1::::<>Node<>::
-main.tscn::PackedScene::2799706444073824879::1706103437::0::1::::<><>::uid://du0u1v14eg36c::::res://player.tscn<>res://main.gd<>uid://h344xggg6tk6::::res://mob.tscn<>res://CameraPivot.gd<>uid://cf71gpm1b4iwi::::res://art/DepthCharge-Clean.ogg<>uid://ponkkacvox8r::::res://fonts/Montserrat-Medium.ttf<>res://ScoreLabel.gd
+main.tscn::PackedScene::2799706444073824879::1706103635::0::1::::<><>::uid://du0u1v14eg36c::::res://player.tscn<>res://main.gd<>uid://h344xggg6tk6::::res://mob.tscn<>res://CameraPivot.gd<>uid://cf71gpm1b4iwi::::res://art/DepthCharge-Clean.ogg<>uid://ponkkacvox8r::::res://fonts/Montserrat-Medium.ttf<>res://ScoreLabel.gd
 Mob.gd::GDScript::-1::1706100690::0::1::::<>CharacterBody3D<>::
-mob.tscn::PackedScene::550938280981120983::1706103437::0::1::::<><>::res://Mob.gd<>uid://bwutcpo6cjoqt::::res://art/mob.glb<>uid://bs8dqdpdants::::res://art/Tom Hi 909 Color 03.wav
-MusicPlayer.tscn::PackedScene::6378444683636376762::1706103437::0::1::::<><>::uid://cdtxbcep6gyq5::::res://art/House In a Forest Loop.ogg
+mob.tscn::PackedScene::550938280981120983::1706103635::0::1::::<><>::res://Mob.gd<>uid://bwutcpo6cjoqt::::res://art/mob.glb<>uid://bs8dqdpdants::::res://art/Tom Hi 909 Color 03.wav
+MusicPlayer.tscn::PackedScene::6378444683636376762::1706103635::0::1::::<><>::uid://cdtxbcep6gyq5::::res://art/House In a Forest Loop.ogg
 player.gd::GDScript::-1::1706099111::0::1::::<>CharacterBody3D<>::
-player.tscn::PackedScene::8615910282666811552::1706103437::0::1::::<><>::res://player.gd<>uid://bmxtd4m1opp7o::::res://art/player.glb
+player.tscn::PackedScene::8615910282666811552::1706103635::0::1::::<><>::res://player.gd<>uid://bmxtd4m1opp7o::::res://art/player.glb
 README.md::TextFile::-1::1705919183::0::1::::<><>::
 ScoreLabel.gd::GDScript::-1::1706094109::0::1::::<>Label<>::
 UI_theme.tres::Theme::8950053031514334930::1706088355::0::1::::<><>::

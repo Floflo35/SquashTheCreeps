@@ -155,6 +155,5 @@ jump={
 [rendering]
 
 renderer/rendering_method="mobile"
-anti_aliasing/quality/use_taa=true
 quality/driver/driver_name="GLES2"
 quality/filters/msaa=3

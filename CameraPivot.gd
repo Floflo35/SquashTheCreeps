@@ -19,7 +19,7 @@ func _physics_process(delta):
 			$Camera3D.position.x = (randf() - 0.5) * shake_intensity / 10
 			$Camera3D.position.y = (randf() - 0.5) * shake_intensity / 10
 			shake_time += delta
-			print("time: ", shake_time)
+			#print("time: ", shake_time)
 
 
 func _enter_tree():
